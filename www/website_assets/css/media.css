@@ -1,0 +1,234 @@
+
+@media (min-width: 768px){
+
+
+	/*.make-icon {
+	    background: #F44336;
+	    width: 50px;
+	    height: 50px;
+	    border-radius: 10px;
+	    z-index: 1;
+	    cursor: pointer;
+	    padding: 5px;
+	}*/
+
+	.icons{
+	    max-height: 500px;
+	    overflow: scroll;
+	}
+
+	.showonlyonmobile{
+
+		display: block;
+	}
+
+/*	.category-popup h5{
+		font-size: 12px;
+	}*/
+
+	/*.text-search {
+	    width: 240px;
+	}
+	*/
+/*	.change-location{
+
+	    width: 240px;
+
+	}*/
+/*	.close-popup {
+	    width: 40px!important;
+	}*/
+
+
+	.landscape{
+		display: none;
+	}
+
+
+	.hideonmobile{
+	    display: block;
+	}
+
+/*	.header-container {
+	    padding: 10px 40px;
+	}*/
+
+	.container {
+	    max-width: 100%;
+	}
+
+	.location-container{
+	    display: block;
+	}
+
+	.right-mobile{
+
+		display: block;
+	}
+	.mob-location-icon{
+	    display: none;
+	}
+
+	.myclose{
+	    font-size: 30px;
+	}
+
+	.text-search {
+	    font-size: 20px;
+	}
+
+/*	.search{
+	   font-size: 14px;
+	}*/
+
+	.current-location{
+	   font-size: 16px;
+	}
+
+	.left-content-container {
+	    margin-top: 4px;
+	}
+
+	.right-hand{
+	    width: 60px;
+	}
+
+	.labelcss{
+		font-size: 10px;
+	}
+
+}
+
+@media (min-width: 992px){
+
+	.container {
+	    max-width: 100%;
+	}
+
+	.showonlyonmobile{
+
+		display: none;
+	}
+	
+}
+@media (min-width: 1200px){
+
+	.container {
+	    max-width: 1920px;
+	}
+	
+}
+
+@media (max-width: 768px){
+
+
+
+	.logo {
+
+	    width: 120px;
+	}
+
+	.right-mobile {
+	    margin-top: 0;
+	}
+
+	.search-icon {
+	    width: 25px;
+	}
+
+	.view-photos {
+		background: #ff5252;
+	    padding: 5px;
+	    font-size: 8px;
+	     margin-top: 5px; 
+	    cursor: pointer;
+	}
+
+	.logout img{
+
+	    width: 40px;
+	    height: 40px;
+	    margin: auto;
+	}
+
+
+
+	.result-found {
+	    font-size: 10px;
+	    padding: 6px 10px;
+	}
+
+	.logout p{
+			
+		font-size: 8px;
+	}
+
+
+	span, input, p {
+	    font-size: 12px;
+	}
+
+
+
+	h3{
+		font-size: 14px;
+	}
+
+	h5{
+		font-size: 10px;
+	}
+
+	#open-details {
+	    width: 300px;
+	}
+
+	.direction-container {
+	    width: 300px;
+	}
+
+	#open-filter {
+	    width: 300px;
+	}
+
+	h4, .h4 {
+	    font-size: 16px;
+	}
+
+	
+
+	.donthave {
+	    font-size: 10px;
+	}
+
+	.already {
+	    font-size: 10px;
+	}
+
+	.forgot-password{
+	    font-size: 10px;
+	        width: 95%;
+
+	}
+}
+
+
+@media (max-width: 320px){
+
+	.icons {
+	    max-height: 370px;
+	    overflow: scroll;
+	}
+}
+
+
+@media (min-width: 568px) and (max-width: 736px){
+
+	.landscape{
+		display: block;
+	}
+
+
+}
+
+
+
