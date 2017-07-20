@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+
+    alert('device is ready');
+
+
     // Lockr.flush();
     // console.log('locker flushed');
     // return false;
@@ -83,6 +87,8 @@ $(document).ready(function() {
 
         // var map initilize start
 
+        alert('init map called');
+
         map = new google.maps.Map(document.getElementById('main_map'), {
 
             zoom: 16,
@@ -95,17 +101,17 @@ $(document).ready(function() {
             fullscreenControl: false,
             styles: [
 
-                // {
-                //     featureType: 'all',
-                //     elementType: 'all',
-                //     stylers: [{
-                //             invert_lightness: 'true'
-                //         },
-                //         {
-                //             saturation: -100
-                //         }
-                //     ]
-                // },
+                {
+                    featureType: 'all',
+                    elementType: 'all',
+                    stylers: [{
+                            invert_lightness: 'true'
+                        },
+                        {
+                            saturation: -100
+                        }
+                    ]
+                },
 
                 {
                     featureType: 'all',
@@ -152,6 +158,10 @@ $(document).ready(function() {
             };
 
             navigator.geolocation.getCurrentPosition(function(position, error, options) {
+
+
+
+                alert('location allowed');
 
                 current_position = {
                     lat: position.coords.latitude,
@@ -213,6 +223,10 @@ $(document).ready(function() {
                                 },
                                 success: function(result) {
 
+
+
+                                    alert('check login checked');
+
                                     result = JSON.parse(result);
                                     // console.log(result);
 
@@ -247,22 +261,22 @@ $(document).ready(function() {
 
             }, function() {
 
-                // alert('Location not allowed first');
+                alert('Location not allowed first');
+
                 $('.enable-location').css('display','block');
                 $('.preloader').fadeOut('fast');
 
                 // handleLocationError(true, infowindow, map.getCenter());
 
-
             });
 
         } else {
 
+            alert('Location not allowed');
 
             $('.enable-location').css('display','block');
             $('.preloader').fadeOut('fast');
 
-            // alert('Location not allowed');
             // handleLocationError(false, infowindow, map.getCenter());
         }
     }

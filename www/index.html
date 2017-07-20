@@ -23,7 +23,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-<!--     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
 
 
        <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
@@ -102,15 +102,12 @@
                         </div>
 
                         <div class="disable-screen"></div>
-                        <div class="preloader">
-
+                        <div class="cust-preloader">
                         <!-- base_url('assets/website_assets/img/preloader.gif'); -->
                         <!-- https://barryustorage.blob.core.windows.net/assets/img/ui/preloaders/load.gif -->
-
-
-
                            <img class="img-responsive" src="https://www.vesselfinder.com/images/loading-text.gif">
                         </div>
+
                         <div class="opened-popup forgot-popup-container">
                            <div class="forgot-popup">
                               <h4 class="popup-up-heading">Forgot Password</h4>
