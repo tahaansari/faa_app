@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
-
-    alert('device is ready');
-
+    console.log('device is ready');
 
     // Lockr.flush();
     // console.log('locker flushed');
@@ -74,20 +72,16 @@ $(document).ready(function() {
     }
 
     function showPreloader() {
-        $('.preloader').fadeIn();
+        $('.cust-preloader').fadeIn();
     }
 
     function hidePreloader() {
-        $('.preloader').fadeOut();
+        $('.cust-preloader').fadeOut();
     }
 
     // function initmap start
 
     function initMap() {
-
-        // var map initilize start
-
-        alert('init map called');
 
         map = new google.maps.Map(document.getElementById('main_map'), {
 
@@ -101,17 +95,17 @@ $(document).ready(function() {
             fullscreenControl: false,
             styles: [
 
-                {
-                    featureType: 'all',
-                    elementType: 'all',
-                    stylers: [{
-                            invert_lightness: 'true'
-                        },
-                        {
-                            saturation: -100
-                        }
-                    ]
-                },
+                // {
+                //     featureType: 'all',
+                //     elementType: 'all',
+                //     stylers: [{
+                //             invert_lightness: 'true'
+                //         },
+                //         {
+                //             saturation: -100
+                //         }
+                //     ]
+                // },
 
                 {
                     featureType: 'all',
@@ -157,19 +151,20 @@ $(document).ready(function() {
                 maximumAge: 0
             };
 
-            navigator.geolocation.getCurrentPosition(function(position, error, options) {
+            // navigator.geolocation.getCurrentPosition(function(position, error, options) {
 
+            //     current_position = {
+            //         lat: position.coords.latitude,
+            //         lng: position.coords.longitude
+            //     };
 
-
-                alert('location allowed');
-
-                current_position = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-
-
+                current_position =  { lat: 18.9756769, lng: 72.8280759 };
+                
                 map.setCenter(current_position);
+                console.log(current_position);
+
+
+
 
                 cl_marker = new google.maps.Marker({
                     position: current_position,
@@ -224,9 +219,6 @@ $(document).ready(function() {
                                 success: function(result) {
 
 
-
-                                    alert('check login checked');
-
                                     result = JSON.parse(result);
                                     // console.log(result);
 
@@ -238,7 +230,7 @@ $(document).ready(function() {
 
                                     }
 
-                                    $('.preloader').fadeOut('fast');
+                                    $('.cust-preloader').fadeOut('fast');
 
                                 },
                                 error: function() {
@@ -259,23 +251,19 @@ $(document).ready(function() {
 
                 });
 
-            }, function() {
+            // }, function() {
 
-                alert('Location not allowed first');
+            //     $('.enable-location').css('display','block');
+            //     $('.cust-preloader').fadeOut('fast');
 
-                $('.enable-location').css('display','block');
-                $('.preloader').fadeOut('fast');
+            //     // handleLocationError(true, infowindow, map.getCenter());
 
-                // handleLocationError(true, infowindow, map.getCenter());
-
-            });
+            // });
 
         } else {
 
-            alert('Location not allowed');
-
             $('.enable-location').css('display','block');
-            $('.preloader').fadeOut('fast');
+            $('.cust-preloader').fadeOut('fast');
 
             // handleLocationError(false, infowindow, map.getCenter());
         }
@@ -578,7 +566,6 @@ $(document).ready(function() {
                 }
 
             })
-
 
             alert('Daily Request limit exceeded for static search');
             $('.disable-screen').fadeOut('fast');
@@ -1046,7 +1033,7 @@ $(document).ready(function() {
                 // alert('Location not allowed');
                 // handleLocationError(true, infowindow, map.getCenter());
                 $('.enable-location').css('display','block');
-                $('.preloader').fadeOut('fast');
+                $('.cust-preloader').fadeOut('fast');
 
             });
 
@@ -1057,7 +1044,7 @@ $(document).ready(function() {
             // handleLocationError(false, infowindow, map.getCenter());
 
                 $('.enable-location').css('display','block');
-                $('.preloader').fadeOut('fast');
+                $('.cust-preloader').fadeOut('fast');
 
 
         }
@@ -1676,86 +1663,86 @@ $(document).ready(function() {
 
     // google start
 
-    var googleUser = {};
+    // var googleUser = {};
 
-    var startApp = function() {
+    // var startApp = function() {
 
-        gapi.load('auth2', function() {
-            // Retrieve the singleton for the GoogleAuth library and set up the client.
-            auth2 = gapi.auth2.init({
-                client_id: '396969281785-kef6niou9a40dhqrqmc4ubng9e57v3to.apps.googleusercontent.com',
-                cookiepolicy: 'single_host_origin',
-                // Request scopes in addition to 'profile' and 'email'
-                //scope: 'additional_scope'
-            });
-            attachSignin(document.getElementById('googlelogin'));
-        });
-    };
+    //     gapi.load('auth2', function() {
+    //         // Retrieve the singleton for the GoogleAuth library and set up the client.
+    //         auth2 = gapi.auth2.init({
+    //             client_id: '396969281785-kef6niou9a40dhqrqmc4ubng9e57v3to.apps.googleusercontent.com',
+    //             cookiepolicy: 'single_host_origin',
+    //             // Request scopes in addition to 'profile' and 'email'
+    //             //scope: 'additional_scope'
+    //         });
+    //         attachSignin(document.getElementById('googlelogin'));
+    //     });
+    // };
 
-    function attachSignin(element) {
+    // function attachSignin(element) {
 
-        auth2.attachClickHandler(element, {},
+    //     auth2.attachClickHandler(element, {},
 
-            function(googleUser) {
+    //         function(googleUser) {
 
-                var profile = googleUser.getBasicProfile();
+    //             var profile = googleUser.getBasicProfile();
 
-                $.ajax({
+    //             $.ajax({
 
-                    type: 'POST',
-                    url: base_url + 'home/social_signup',
-                    data: {
+    //                 type: 'POST',
+    //                 url: base_url + 'home/social_signup',
+    //                 data: {
 
-                        loggedin_from: "google",
-                        social_id: profile.getId(),
-                        name: profile.getName(),
-                        email: profile.getEmail(),
-                        profile_url: profile.getImageUrl(),
-                        place_id: place_id,
-                        location: location
+    //                     loggedin_from: "google",
+    //                     social_id: profile.getId(),
+    //                     name: profile.getName(),
+    //                     email: profile.getEmail(),
+    //                     profile_url: profile.getImageUrl(),
+    //                     place_id: place_id,
+    //                     location: location
 
-                    },
-                    success: function(result) {
+    //                 },
+    //                 success: function(result) {
 
-                        result = JSON.parse(result);
-                        console.log(result);
-                        if (result.status == 'success') {
+    //                     result = JSON.parse(result);
+    //                     console.log(result);
+    //                     if (result.status == 'success') {
 
-                            $('#login_email').val("");
-                            $('#login_password').val("");
-                            $('#login_error').html("");
+    //                         $('#login_email').val("");
+    //                         $('#login_password').val("");
+    //                         $('#login_error').html("");
 
-                            $('.login-popup-container').fadeOut('fast');
-                            $('#name').html(result.name);
-                            $('#logout img').attr('src', result.profile_url);
-                            $('#logout').fadeIn('slow');
+    //                         $('.login-popup-container').fadeOut('fast');
+    //                         $('#name').html(result.name);
+    //                         $('#logout img').attr('src', result.profile_url);
+    //                         $('#logout').fadeIn('slow');
 
-                            // Lockr.set('is_loggedin', true);
+    //                         // Lockr.set('is_loggedin', true);
 
-                            hidePreloader();
+    //                         hidePreloader();
 
-                        } else {
+    //                     } else {
 
-                            alert('failed')
-                            hidePreloader();
+    //                         alert('failed')
+    //                         hidePreloader();
 
-                        }
-                    },
-                    error: function(error) {
+    //                     }
+    //                 },
+    //                 error: function(error) {
 
-                        console.log('Server Error');
+    //                     console.log('Server Error');
 
-                    }
-                });
+    //                 }
+    //             });
 
-            },
-            function(error) {
+    //         },
+    //         function(error) {
 
-                // alert(JSON.stringify(error, undefined, 2));
-            });
-    }
+    //             // alert(JSON.stringify(error, undefined, 2));
+    //         });
+    // }
 
-    startApp();
+    // startApp();
 
     // google end
 
