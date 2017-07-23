@@ -2,6 +2,11 @@
 @media (min-width: 768px){
 
 
+	.category-popup {
+
+	margin-top: 5%;
+}
+
 	/*.make-icon {
 	    background: #F44336;
 	    width: 50px;

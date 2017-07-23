@@ -147,12 +147,14 @@ p {
     background: white;
     width: 70%;
     max-width: 800px;
+    max-height: 550px;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 15%;
     text-align: center;
     position: relative;
     padding: 3% 0;
     padding-top: 0;
+    height: 80%;
 }
 .setting-popup-container {
     display: none;
@@ -277,7 +279,7 @@ p {
 }
 
 .icons{
-    max-height: 420px;
+    max-height: 85%;
     overflow: auto;
 }
 
