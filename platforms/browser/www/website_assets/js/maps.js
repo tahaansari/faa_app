@@ -158,7 +158,7 @@ $(document).ready(function() {
             //         lng: position.coords.longitude
             //     };
 
-                current_position =  { lat: 18.9756769, lng: 72.8280759 };
+                current_position =  { lat: 18.9752769, lng: 72.8210759 };
                 
                 map.setCenter(current_position);
                 console.log(current_position);
@@ -172,6 +172,10 @@ $(document).ready(function() {
                     animation: google.maps.Animation.DROP,
                     icon: base_url + 'assets/website_assets/img/man1.png'
                 });
+
+                infowindow = new google.maps.InfoWindow();
+                infowindow.setContent("<div><h5 class='labelcss_success'><b>YOU ARE HERE</b></h5></div>");
+                infowindow.open(map, cl_marker);
 
                 geocoder.geocode({
 

@@ -54,6 +54,7 @@ $(document).ready(function(){
 
 
 	$('.hideshowbtn').click(function(){
+		
 		var status = $('.hideshowbtn').html();
 		if(status=='HIDE'){
 			$('.hideshowbtn').html('SHOW');
